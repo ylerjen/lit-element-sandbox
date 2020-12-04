@@ -7,6 +7,20 @@
 </head>
 <body>
     <simple-greeting name="Everyone"></simple-greeting>
+    <internal-event></internal-event>
+    <custom-event-component id="customclick"></custom-event-component>
+
     <script src="bundle.js"></script>
+    <script>
+        document
+            .getElementById('customclick')
+            .addEventListener(
+                'customclick',
+                (evt) => {
+                    evt.preventDefault();
+                    console.log('clicked at', evt.detail.timestamp);
+                }
+            );
+    </script>
 </body>
 </html>
